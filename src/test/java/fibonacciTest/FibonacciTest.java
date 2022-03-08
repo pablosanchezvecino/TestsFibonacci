@@ -1,6 +1,6 @@
 package fibonacciTest;
 
-import fibonacci.*;
+import fibonacci.Fibonacci;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,9 +16,9 @@ public class FibonacciTest {
      * fibonacci 2 -> 1
      * fibonacci 3 -> 2
      * fibonacci 10 -> 55
-     * fibonacci 46 -> 1836311903
+     * fibonacci 92 -> 7540113804746346429
      * fibonacci (< 0) -> IllegalArgumentException
-     * fibonacci (> 47) -> IllegalArgumentException
+     * fibonacci (> 92) -> IllegalArgumentException
      **/
 
     private Fibonacci fib;
@@ -35,16 +35,16 @@ public class FibonacciTest {
 
     @Test
     public void compute_ArgumentIsZero_ReturnZero(){
-        int expectedValue = 0;
-        int obtainedValue = fib.compute(0);
+        long expectedValue = 0;
+        long obtainedValue = fib.compute(0);
 
         assertEquals(expectedValue, obtainedValue);
     }
 
     @Test
     public void compute_ArgumentIsOne_ReturnOne(){
-        int expectedValue = 1;
-        int obtainedValue = fib.compute(1);
+        long expectedValue = 1;
+        long obtainedValue = fib.compute(1);
 
         assertEquals(expectedValue, obtainedValue);
     }
@@ -52,23 +52,31 @@ public class FibonacciTest {
     @Test
     public void compute_ArgumentIsTwo_ReturnOne(){
         int expectedValue = 1;
-        int obtainedValue = fib.compute(2);
+        long obtainedValue = fib.compute(2);
 
         assertEquals(expectedValue, obtainedValue);
     }
 
     @Test
     public void compute_ArgumentIsThree_ReturnTwo(){
-        int expectedValue = 2;
-        int obtainedValue = fib.compute(3);
+        long expectedValue = 2;
+        long obtainedValue = fib.compute(3);
 
         assertEquals(expectedValue, obtainedValue);
     }
 
     @Test
     public void compute_ArgumentIsTen_Return55(){
-        int expectedValue = 55;
-        int obtainedValue = fib.compute(10);
+        long expectedValue = 55;
+        long obtainedValue = fib.compute(10);
+
+        assertEquals(expectedValue, obtainedValue);
+    }
+
+    @Test
+    public void compute_ArgumentIs92_Return7540113804746346429(){
+        long expectedValue = 7540113804746346429L;
+        long obtainedValue = fib.compute(92);
 
         assertEquals(expectedValue, obtainedValue);
     }
@@ -79,16 +87,8 @@ public class FibonacciTest {
     }
 
     @Test
-    public void compute_ArgumentIs46_Return1836311903(){
-        int expectedValue = 1836311903;
-        int obtainedValue = fib.compute(46);
-
-        assertEquals(expectedValue, obtainedValue);
-    }
-
-    @Test
-    public void compute_ArgumentIsGreaterThan46_RaiseAnIllegalArgumentException(){
-        assertThrows(IllegalArgumentException.class, () -> fib.compute(47));
+    public void compute_ArgumentIsGreaterThan92_RaiseAnIllegalArgumentException(){
+        assertThrows(IllegalArgumentException.class, () -> fib.compute(93));
     }
 
 }
