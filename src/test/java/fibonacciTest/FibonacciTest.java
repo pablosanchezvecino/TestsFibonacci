@@ -7,19 +7,21 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
+/**
+ * Contiene una serie de pruebas unitarias que intentan cubrir
+ * las posibles entradas que puede recibir el método
+ * {@link Fibonacci#compute(int) compute(int n)} de la clase {@link Fibonacci}.<br><br>
+ * <b>Pruebas unitarias:</b><br>
+ * compute(0) -> 0<br>
+ * compute(1) -> 0<br>
+ * compute(2) -> 1<br>
+ * compute(3) -> 2<br>
+ * compute(10) -> 55<br>
+ * compute(92) -> 7540113804746346429<br>
+ * compute(n < 0) -> IllegalArgumentException<br>
+ * compute(n > 92) -> IllegalArgumentException<br>
+ */
 public class FibonacciTest {
-    /**
-     * Test cases:
-     * fibonacci 0 -> 0
-     * fibonacci 1 -> 0
-     * fibonacci 2 -> 1
-     * fibonacci 3 -> 2
-     * fibonacci 10 -> 55
-     * fibonacci 92 -> 7540113804746346429
-     * fibonacci (< 0) -> IllegalArgumentException
-     * fibonacci (> 92) -> IllegalArgumentException
-     **/
 
     private Fibonacci fib;
 
@@ -51,7 +53,7 @@ public class FibonacciTest {
 
     @Test
     public void compute_ArgumentIsTwo_ReturnOne(){
-        int expectedValue = 1;
+        long expectedValue = 1;
         long obtainedValue = fib.compute(2);
 
         assertEquals(expectedValue, obtainedValue);
