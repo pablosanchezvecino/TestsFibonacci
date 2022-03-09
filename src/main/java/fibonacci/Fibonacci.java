@@ -8,9 +8,9 @@ public class Fibonacci {
     /**
      * Calcula el n-ésimo término de la sucesión de Fibonacci de forma iterativa
      * y utilizando variables de tipo <code>long</code>.
-     * @param n indica que se quiere calcular el n-ésimo término de la sucesión.
+     * @param n indica el término de la sucesión que se quiere calcular.
      * @return el n-ésimo término de la sucesión.
-     * @throws IllegalArgumentException Si n es negativo o causa desbordamiento (n > 92).
+     * @throws IllegalArgumentException Si n es negativo (< 0) o causa desbordamiento (n > 92).
      */
     public long compute(int n) {
         if (n < 0 || n > 92) throw new IllegalArgumentException("El argumento no puede ser negativo " +
