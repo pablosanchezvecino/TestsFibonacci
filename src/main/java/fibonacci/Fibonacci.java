@@ -30,8 +30,4 @@ public class Fibonacci {
         return sum;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Fibonacci().compute(92));
-    }
-
 }
